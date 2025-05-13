@@ -1,11 +1,4 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: ;
-}
-
 /*Variabler til farver og fonte*/
 :root {
     --Beige: #f5f5dc;
@@ -13,22 +6,18 @@
     --lilla: #b9aedc;
     --blaa:#c7dad4;
     --lysrod: #eec9b7;
-
-    /*De to skifttyper vi har brugt*/
-    --fatface:"Abril Fatface", serif;
-    --signika: "Signika", sans-serif;
 }
 /* *************************************************************************** */
 
 /*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
 body {
     background-color: var(--Beige);
+    background-image: ;
     margin-top: 50px;
-      margin-left: 30%;            /* Gør body til flex container */
-      justify-content: center;     /* Centrerer vandret */
-      align-items: center;         /* Centrerer lodret */
-    
+    margin-left: 30%;            /* Gør body til flex container */
+   
 }
+
 .cirkel {
     width: 600px;
     height: 500px;
@@ -45,7 +34,6 @@ body {
   .cirkel h1 {
     font-size: 25px;
     margin: 20%;
-
   }
 
   .cirkel-container {
@@ -53,8 +41,6 @@ body {
     width: 300px;
     height: 300px;
     display: flex;
-    
-    
   }
 
   .cirkel-container img {
@@ -68,7 +54,6 @@ body {
     width: 30%;
   }
   .hormonpspiral { transform: rotate(0deg)   translate(200px) rotate(-0deg); 
-margin-: 5px;
 }
   .pring { transform: rotate(51deg)  translate(200px) rotate(-51deg); }
   .pplaster { transform: rotate(102deg) translate(200px) rotate(-102deg); }
@@ -79,12 +64,11 @@ margin-: 5px;
 
 
   .quizknap {
-    margin-left: 25%;
     background-color: #4A6C6F;
     color: #FFFFFF;
     border: none;
     border-radius: 10px;
     height: 40px;
     width: 100px;
-
+    margin-left: 22%;
   }
