@@ -1,74 +1,106 @@
-
 /*Variabler til farver og fonte*/
 :root {
-    --Beige: #f5f5dc;
-    --gron:#4a6c6f;
-    --lilla: #b9aedc;
-    --blaa:#c7dad4;
-    --lysrod: #eec9b7;
+  --Beige: #f5f5dc;
+  --gron:#4a6c6f;
+  --lilla: #b9aedc;
+  --blaa:#c7dad4;
+  --lysrod: #eec9b7;
 }
 /* *************************************************************************** */
 
 /*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
 body {
-    background-color: var(--Beige);
-    background-image: ;
-    margin-top: 50px;
-    margin-left: 30%;            /* Gør body til flex container */
-   
+  background-color: var(--Beige);
+  background-image: url("/Images/Bgpattern.png");
+
+  /* Ændret: fjerner margin-left og bruger flex i stedet */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cirkel {
-    width: 600px;
-    height: 500px;
-    border-radius: 50%;         /* Gør den rund */
-    background-color: var(--blaa);  /* Blå farve */
-    display: flex;           /* Centrerer indholdet */
-    align-items: center;
-    justify-content: center;
-    color: var(--gron);               /* Tekstfarve */
-    font-size: 20px;
-    text-align: center; 
-  }
-
-  .cirkel h1 {
-    font-size: 25px;
-    margin: 20%;
-  }
-
-  .cirkel-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-  }
-
-  .cirkel-container img {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-left: 85%;
-    margin-top: -100%;
-    height: 30%;
-    width: 30%;
-  }
-  .hormonpspiral { transform: rotate(0deg)   translate(200px) rotate(-0deg); 
+  width: 630px;
+  height: 530px;
+  border-radius: 50%;
+  background-color: var(--blaa);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Tilføjet for at centrere tekst/indhold */
+  color: var(--gron);
+  font-size: 20px;
+  text-align: center; 
+  margin-top: 50px;
 }
-  .pring { transform: rotate(51deg)  translate(200px) rotate(-51deg); }
-  .pplaster { transform: rotate(102deg) translate(200px) rotate(-102deg); }
-  .minipille { transform: rotate(153deg) translate(200px) rotate(-153deg); }
-  .ppille { transform: rotate(204deg) translate(200px) rotate(-204deg); }
-  .pstav { transform: rotate(255deg) translate(200px) rotate(-255deg); }
-  .psprojte { transform: rotate(306deg) translate(200px) rotate(-306deg); }
 
+.cirkel h1 {
+  font-size: 25px;
+  margin: 20%;
+  align-items: center;
+}
 
-  .quizknap {
-    background-color: #4A6C6F;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    height: 40px;
-    width: 100px;
-    margin-left: 22%;
-  }
+.cirkel-container {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  display: flex;
+}
+
+.cirkel-container img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-left: 85%;
+  margin-top: -100%;
+}
+
+.hormonpspiral { transform: rotate(350deg) translate(250px) rotate(-350deg);}
+.pring          { transform: rotate(35deg)  translate(190px) rotate(-35deg);
+  scale: 1.1
+}
+.pplaster       { transform: rotate(90deg)  translate(170px) rotate(-90deg); }
+.minipille      { transform: rotate(153deg) translate(200px) rotate(-153deg); }
+.ppille         { transform: rotate(204deg) translate(230px) rotate(-204deg); }
+.pstav          { transform: rotate(255deg) translate(210px) rotate(-255deg); }
+.psprojte       { transform: rotate(306deg) translate(230px) rotate(-306deg); }
+
+.ikon {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ikon img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* hvis de skal være runde */
+  transition: transform 0.2s ease;
+}
+
+.ikon:hover img {
+  transform: scale(1.1);
+}
+
+.knap-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.quizknap {
+  background-color: #4A6C6F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  height: 70px;
+  width: 250px;
+  margin-top: -30px;
+  font-size: 20px;
+}
