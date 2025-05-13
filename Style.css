@@ -1,0 +1,25 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Variabler til farver og fonte*/
+:root {
+    --Beige: #f5f5dc;
+    --gron:#4a6c6f;
+    --lilla: #b9aedc;
+    --blaa:#c7dad4;
+    --lysrod: #eec9b7;
+
+    /*De to skifttyper vi har brugt*/
+    --fatface:"Abril Fatface", serif;
+    --signika: "Signika", sans-serif;
+}
+/* *************************************************************************** */
+
+/*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
+body {
+    background-color: var(--Beige);
+}
