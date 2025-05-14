@@ -58,9 +58,62 @@ body {
   margin-top: -100%;
 }
 
-.hormonpspiral { transform: rotate(350deg) translate(250px) rotate(-350deg);}
+.hormonspiral { transform: rotate(350deg) translate(250px) rotate(-350deg);}
+.modal {
+  display: none; /* Skjult som standard */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: 5% auto;
+  padding: 0;
+  width: 80%;
+  max-width: 800px;
+  background-color: #000;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.back-button {
+  display: block;
+  margin: 10px auto 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #ddd;
+}
+
 .pring          { transform: rotate(35deg)  translate(190px) rotate(-35deg);
-  scale: 1.1
 }
 .pplaster       { transform: rotate(90deg)  translate(170px) rotate(-90deg); }
 .minipille      { transform: rotate(153deg) translate(200px) rotate(-153deg); }

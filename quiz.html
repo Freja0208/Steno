@@ -1,38 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steno</title>
-    <link rel="stylesheet" href="css/quiz.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steno</title>
+  <link rel="stylesheet" href="css/quiz.css"/>
+  <style>
+    .selected {
+      border: 4px solid gold;
+      border-radius: 50%;
+    }
+    #playersList {
+      margin-top: 1em;
+    }
+  </style>
 </head>
-    <body>
+<body>
 
-<a href="/index.html"><button class="tilbage">Tilbage</button></a>
+  <a href="/index.html"><button class="tilbage">Tilbage</button></a>
 
-        <section class="midte">
+  <section class="midte">
+    <div class="cirkel2">
+      <h2>Quiz med dine venner</h2>
+      <h2>Test din viden om prævention til kvinder.<br>
+        Dyst om 1. pladsen og bliv klogere undervejs.
+      </h2> 
+      <h2>Vælg din avatar! Der kan max være 3 spillere</h2>
 
-        <div class="cirkel2">
-             <h2>Quiz med dine venner</h2>
+      <div class="cirkel-container" id="avatarContainer">
+        <img src="css/Avatars/alien.png" class="img1 avatar" alt="Alien" data-avatar="alien">
+        <img src="css/Avatars/ulv.png" class="img2 avatar" alt="Ulv" data-avatar="ulv">
+        <img src="css/Avatars/unicornpige.png" class="img3 avatar" alt="Unicorn" data-avatar="unicorn">
+        <img src="css/Avatars/pigemedhorn.png" class="img4 avatar" alt="Hornpige" data-avatar="hornpige">
+        <img src="css/Avatars/troldmand.png" class="img5 avatar" alt="Troldmand" data-avatar="troldmand">
+      </div>
 
-            <h2>Test din viden om prævention til kvinder. <br>
-                Dyst om 1. pladsen og bliv klogere undervejs. </h2> 
-              
-            <h2>Vælg din avatar!</h2>
-      <div>
+      <button class="tilmeld" onclick="addPlayer()">Tilmeld</button>
+      <div id="playersList"></div>
 
-          <div class="cirkel-container">
-            <img src="css/Avatars/alien.png" class="img1" alt="1">
-            <img src="css/Avatars/ulv.png" class="img2" alt="2">
-            <img src="css/Avatars/unicornpige.png" class="img3" alt="3">
-            <img src="css/Avatars/pigemedhorn.png" class="img4" alt="4">
-            <img src="css/Avatars/troldmand.png" class="img5" alt="5">
-          </div>
-        </section>
-          
-          <button  class="tilmeld", onclick="addPlayer()">Tilmeld</button>
-          <div id="playersList"></div>
-          <a href="sprg1.html"><button onclick="startQuiz()">Start quiz</button></a>
-        </div>
-       
-    </body>
+      <a href="sprg1.html"><button id="startBtn" disabled>Start quiz</button></a>
+    </div>
+  </section>
+
+  <script>
+    const avatars = document.querySelectorAll('.avatar');
+    const players = [];
+    let selectedAvatar = null;
+
+    avatars.forEach(avatar => {
+      avatar.addEventListener('click', () => {
+        if (avatar.classList.contains('selected')) {
+          avatar.classList.remove('selected');
+          selectedAvatar = null;
+        } else {
+          avatars.forEach(a => a.classList.remove('selected'));
+          avatar.classList.add('selected');
+          selectedAvatar = avatar.getAttribute('data-avatar');
+        }
+      });
+    });
+
+    function addPlayer() {
+      if (!selectedAvatar) {
+        alert("Vælg en avatar først!");
+        return;
+      }
+
+      if (players.length >= 3) {
+        alert("Der kan maks være 3 spillere.");
+        return;
+      }
+
+      if (players.includes(selectedAvatar)) {
+        alert("Denne avatar er allerede valgt.");
+        return;
+      }
+
+      players.push(selectedAvatar);
+      updatePlayersList();
+
+      // Fjern valgt avatar fra valgbarhed
+      avatars.forEach(avatar => {
+        if (avatar.getAttribute('data-avatar') === selectedAvatar) {
+          avatar.style.opacity = "0.5";
+          avatar.style.pointerEvents = "none";
+          avatar.classList.remove('selected');
+        }
+      });
+
+      selectedAvatar = null;
+
+      if (players.length === 3) {
+        document.getElementById("startBtn").disabled = false;
+      }
+    }
+
+    function updatePlayersList() {
+      const list = document.getElementById("playersList");
+      list.innerHTML = "";
+      players.forEach((avatar, index) => {
+        list.innerHTML += `<p>Spiller ${index + 1}: ${avatar}</p>`;
+      });
+    }
+
+    function startQuiz() {
+      // Du kan gemme spillerdata i localStorage her, hvis nødvendigt
+    }
+  </script>
+
+</body>
+</html>

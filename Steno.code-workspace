@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Desktop/creato_display"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Steno"
+	}
+}

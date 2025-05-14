@@ -1,0 +1,43 @@
+/*Variabler til farver og fonte*/
+:root {
+    --Beige: #f5f5dc;
+    --gron:#4a6c6f;
+    --lilla: #b9aedc;
+    --blaa:#c7dad4;
+    --lysrod: #eec9b7;
+
+    /*De to skifttyper vi har brugt*/
+    --fatface:"Abril Fatface", serif;
+    --signika: "Signika", sans-serif;
+}
+/*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
+body {
+    background-color: var(--Beige);
+    background-image: url("/Images/Bgpattern.png");
+    margin-top: 20px;
+      margin-left: 22%;            /* Gør body til flex container */
+      justify-content: center;     /* Centrerer vandret */
+      align-items: center;         /* Centrerer lodret */
+    
+}
+.cirkel {
+    width: 630px;
+    height: 530px;
+    border-radius: 50%;
+    background-color: var(--blaa);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Tilføjet for at centrere tekst/indhold */
+    color: var(--gron);
+    font-size: 20px;
+    text-align: center; 
+    margin-top: 50px;
+  }
+
+#quiz-container{
+    border: var(--gron);
+
+}
+#next-button{
+    color: var(--blaa);
+}
