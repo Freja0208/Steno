@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinderpodie</title>
+  <link rel="stylesheet" href="css/podie.css" />
+</head>
+<body>
+
+  <h1>🏆 Dit resultat</h1>
+  <div id="podium" class="podium-container"></div>
+
+  <button class="tilmeld" onclick="window.location.href='index.html'">Spil igen</button>
+
+  <script>
+    const players = JSON.parse(localStorage.getItem("players")) || [];
+    players.sort((a, b) => b.score - a.score); // Sortér efter score
+
+    const container = document.getElementById("podium");
+    const medaljer = ["🥈", "🥇", "🥉"]; // Visuelt: 2. – 1. – 3. plads
+
+    const placeringer = [
+      { klasse: "second", indeks: 1 },
+      { klasse: "first", indeks: 0 },
+      { klasse: "third", indeks: 2 }
+    ];
+
+    placeringer.forEach((placering, i) => {
+      const spiller = players[placering.indeks];
+      if (!spiller) return;
+
+      const div = document.createElement("div");
+      div.className = `podium-place ${placering.klasse}`;
+      div.innerHTML = `
+        <div class="medal">${medaljer[i]}</div>
+        <img src="css/Avatars/${spiller.avatar}.png" alt="${spiller.avatar}" />
+        <strong>${spiller.score} point</strong>
+      `;
+      container.appendChild(div);
+    });
+
+    localStorage.clear(); // Ryd data til næste spil
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+  

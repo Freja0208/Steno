@@ -13,27 +13,26 @@
       </div>
   
       <div class="cirkel-container">
-          
-         
-    <button onclick="openModal()"><img src="css/Ikoner /homonspiral.png" class="hormonspiral" alt="1"></button>
+    
+  <!-- Billedet man klikker på -->
+<img src="css/Ikoner/homonspiral.png" alt="Hormonspiral" class="hormonspiral" onclick="openModal()">
 
+<!-- Skjult video-popup (modal) -->
 <div id="videoModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <video id="popupVideo" controls>
+    <span class="close" onclick="closeModal()">Tilbage</span>
+    <video id="popupVideo" controls autoplay>
       <source src="/css/Videoer/Hormonspiralvideo.mp4" type="video/mp4">
     </video>
-    <button class="back-button" onclick="closeModal()">Tilbage</button>
   </div>
 </div>
 
-          
-        <img src="css/Ikoner /p-ring.png" class="pring" alt="2">
-        <img src="css/Ikoner /plaster.png" class="pplaster" alt="3">
-        <img src="css/Ikoner /mini-piller.png" class="minipille" alt="4">
-        <img src="css/Ikoner /p-pille.png" class="ppille" alt="5">
-        <img src="css/Ikoner /p-stav.png" class="pstav" alt="6">
-        <img src="css/Ikoner /p-sprøjte.png" class="psprojte" alt="7">
+    <a href="/css/Videoer/pringvideo.mp4"><img src="css/Ikoner/p-ring.png" class="pring" alt="2"></a>
+        <a href="/css/Videoer/Pplastervideo.mp4"><img src="css/Ikoner/plaster.png" class="pplaster" alt="3"></a>
+        <a href="/css/Videoer/Minipillevideo.mp4"><img src="css/Ikoner/mini-piller.png" class="minipille" alt="4"></a>
+        <a href="/css/Videoer/Ppillervideo.mp4"><img src="css/Ikoner/p-pille.png" class="ppille" alt="5"></a>
+        <a href="/css/Videoer/Pstavvideo.mp4"><img src="css/Ikoner/p-stav.png" class="pstav" alt="6"></a>
+        <a href="/css/Videoer/Psprøjtevideo.mp4"><img src="css/Ikoner/p-sprøjte.png" class="psprojte" alt="7"></a>
       </div>
 
       <div class="knap-container">
@@ -41,20 +40,20 @@
       </div></section>
 
    
+      <script>
+          function openModal() {
+      document.getElementById("videoModal").style.display = "flex";
+      document.getElementById("popupVideo").play();
+    }
 
-<script src="js/js.js">   function openModal() {
-        const modal = document.getElementById("videoModal");
-        const video = document.getElementById("popupVideo");
-        modal.style.display = "block";
-        video.play();
-      }
+    function closeModal() {
+      const modal = document.getElementById("videoModal");
+      const video = document.getElementById("popupVideo");
+      video.pause();
+      video.currentTime = 0;
+      modal.style.display = "none";
+    }
       
-      function closeModal() {
-        const modal = document.getElementById("videoModal");
-        const video = document.getElementById("popupVideo");
-        video.pause();
-        video.currentTime = 0;
-        modal.style.display = "none";
-      } </script>
+      </script>
 </body>
 </html>

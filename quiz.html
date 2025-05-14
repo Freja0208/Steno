@@ -1,19 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Steno</title>
-  <link rel="stylesheet" href="css/quiz.css"/>
-  <style>
-    .selected {
-      border: 4px solid gold;
-      border-radius: 50%;
-    }
-    #playersList {
-      margin-top: 1em;
-    }
-  </style>
+  <title>Steno Quiz</title>
+  <link rel="stylesheet" href="css/quiz.css" />
 </head>
 <body>
 
@@ -22,23 +13,25 @@
   <section class="midte">
     <div class="cirkel2">
       <h2>Quiz med dine venner</h2>
-      <h2>Test din viden om prævention til kvinder.<br>
+      <h3>Test din viden om prævention til kvinder.<br>
         Dyst om 1. pladsen og bliv klogere undervejs.
-      </h2> 
-      <h2>Vælg din avatar! Der kan max være 3 spillere</h2>
+      </h3> 
+      <h3>Vælg din avatar! Min. 1 – Max. 3 spillere</h3>
 
       <div class="cirkel-container" id="avatarContainer">
-        <img src="css/Avatars/alien.png" class="img1 avatar" alt="Alien" data-avatar="alien">
-        <img src="css/Avatars/ulv.png" class="img2 avatar" alt="Ulv" data-avatar="ulv">
-        <img src="css/Avatars/unicornpige.png" class="img3 avatar" alt="Unicorn" data-avatar="unicorn">
-        <img src="css/Avatars/pigemedhorn.png" class="img4 avatar" alt="Hornpige" data-avatar="hornpige">
-        <img src="css/Avatars/troldmand.png" class="img5 avatar" alt="Troldmand" data-avatar="troldmand">
+        <img src="css/Avatars/alien.png" class="avatar" alt="Alien" data-avatar="alien">
+        <img src="css/Avatars/ulv.png" class="avatar" alt="Ulv" data-avatar="ulv">
+        <img src="css/Avatars/unicornpige.png" class="avatar" alt="Unicorn" data-avatar="unicornpige">
+        <img src="css/Avatars/pigemedhorn.png" class="avatar" alt="Hornpige" data-avatar="pigemedhorn">
+        <img src="css/Avatars/troldmand.png" class="avatar" alt="Troldmand" data-avatar="troldmand">
       </div>
 
       <button class="tilmeld" onclick="addPlayer()">Tilmeld</button>
       <div id="playersList"></div>
 
-      <a href="sprg1.html"><button id="startBtn" disabled>Start quiz</button></a>
+      <a href="sprg1.html">
+        <button id="startBtn" class="tilmeld" >Start quiz</button>
+      </a>
     </div>
   </section>
 
@@ -71,15 +64,14 @@
         return;
       }
 
-      if (players.includes(selectedAvatar)) {
+      if (players.find(p => p.avatar === selectedAvatar)) {
         alert("Denne avatar er allerede valgt.");
         return;
       }
 
-      players.push(selectedAvatar);
+      players.push({ avatar: selectedAvatar, score: 0 });
       updatePlayersList();
 
-      // Fjern valgt avatar fra valgbarhed
       avatars.forEach(avatar => {
         if (avatar.getAttribute('data-avatar') === selectedAvatar) {
           avatar.style.opacity = "0.5";
@@ -90,7 +82,7 @@
 
       selectedAvatar = null;
 
-      if (players.length === 3) {
+      if (players.length >= 1) {
         document.getElementById("startBtn").disabled = false;
       }
     }
@@ -98,15 +90,41 @@
     function updatePlayersList() {
       const list = document.getElementById("playersList");
       list.innerHTML = "";
-      players.forEach((avatar, index) => {
-        list.innerHTML += `<p>Spiller ${index + 1}: ${avatar}</p>`;
+
+      players.forEach((player, index) => {
+        list.innerHTML += `
+          <div class="player-container">
+            <div class="score" id="score-${index}">0</div>
+            <div class="avatar-wrapper">
+              <img src="css/Avatars/${player.avatar}.png" alt="${player.avatar}" class="avatar-display" />
+              <p>Spiller ${index + 1}</p>
+            </div>
+          </div>
+        `;
       });
     }
 
-    function startQuiz() {
-      // Du kan gemme spillerdata i localStorage her, hvis nødvendigt
-    }
+    if (currentPlayerIndex + 1 < players.length) {
+  localStorage.setItem("currentPlayerIndex", currentPlayerIndex + 1);
+  window.location.reload();
+} else {
+  localStorage.removeItem("currentPlayerIndex");
+  window.location.href = "podium.html";
+}
+
+if (currentIndex + 1 < players.length) {
+  localStorage.setItem("currentPlayerIndex", currentIndex + 1);
+  window.location.href = "quiz.html";
+} else {
+  localStorage.removeItem("currentPlayerIndex");
+  window.location.href = "podie.html"; // 👈 denne skal matche filnavn
+}
+
   </script>
+
+
+
 
 </body>
 </html>
+

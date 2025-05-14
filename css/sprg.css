@@ -21,9 +21,9 @@ body {
     
 }
 .cirkel {
-    width: 630px;
-    height: 530px;
-    border-radius: 50%;
+    width: 700px;
+    height: 350px;
+    border-radius: 10%;
     background-color: var(--blaa);
     display: flex;
     align-items: center;
@@ -31,13 +31,34 @@ body {
     color: var(--gron);
     font-size: 20px;
     text-align: center; 
-    margin-top: 50px;
+    margin-top: 140px;
   }
 
-#quiz-container{
-    border: var(--gron);
+  #options{
+    background-color: var(--gron);
+    padding: 15px;
+    border-radius: 15%;
+    font-size: large;
+  }
+  
+#next-button {
+    margin-top: 10px;
+    background-color: var(--blaa);
+    border: 0cm;
+    padding: 15px;
+    border-radius: 15%;
+    margin-left: 125px;
+    width: 200px;
+    font-size: large;
+  }
 
-}
-#next-button{
-    color: var(--blaa);
-}
+  .Tilbage{
+    margin-top: 10px;
+    background-color: var(--blaa);
+    border: 0cm;
+    padding: 15px;
+    border-radius: 15%;
+    margin-left: 100px;
+    width: 200px;
+    font-size: large;
+  }

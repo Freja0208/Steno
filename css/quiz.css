@@ -102,18 +102,139 @@ body {
     transition: background-color 0.3s;
 }
 
-  /* podie siden - sidste side*/
+ 
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  #podiumContainer {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    font-size: 18px;
-  }
-  #podiumContainer div {
-    background: #fff;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  }
+/* Farve- og font-variabler */
+:root {
+  --Beige: #f5f5dc;
+  --gron: #4a6c6f;
+  --lilla: #b9aedc;
+  --blaa: #c7dad4;
+  --lysrod: #eec9b7;
+
+  --fatface: "Abril Fatface", serif;
+  --signika: "Signika", sans-serif;
+}
+
+/* Basis styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--Beige);
+  background-image: url("/Images/Bgpattern.png");
+  text-align: center;
+  padding: 2em;
+}
+
+/* Knapper */
+.tilbage {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: var(--blaa);
+  border: none;
+  color: var(--gron);
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.tilmeld {
+  background-color: var(--gron);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.tilmeld:hover {
+  background-color: #3b5759;
+}
+
+#startBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Quiz-område */
+.midte {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cirkel2 {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2em;
+  border-radius: 12px;
+  margin-top: 3em;
+}
+
+.cirkel-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+/* Avatarvalg */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  border: 4px solid gold;
+}
+
+/* Spiller-visning + score */
+#playersList {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 2em;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-display {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+}
+
+.score {
+  margin-bottom: 8px;
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}

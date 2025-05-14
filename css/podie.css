@@ -1,0 +1,172 @@
+body {
+    font-family: "Signika", sans-serif;
+    background-color: #f5f5dc;
+    background-image: url("/Images/Bgpattern.png");
+    text-align: center;
+    padding: 2em;
+    color: #4a6c6f;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+  }
+  
+  .tilmeld {
+    background-color: #4a6c6f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 2em;
+  }
+  
+  .tilmeld:hover {
+    background-color: #3b5759;
+  }
+  
+  #podiumContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 3em;
+    flex-wrap: wrap;
+  }
+  
+  .podium-player {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    padding: 1em;
+    width: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+  
+  .podium-player:hover {
+    transform: scale(1.05);
+  }
+  
+  .podium-player img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
+  }
+  
+  .podium-player strong {
+    font-size: 1.1em;
+    color: #333;
+  }
+  
+  .medal {
+    font-size: 2rem;
+    position: absolute;
+    top: -40px;
+    background-color: gold;
+    color: black;
+    padding: 0.4em;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+  }
+  
+  
+  
+  body {
+    font-family: "Signika", sans-serif;
+    background-color: #f5f5dc;
+    background-image: url("/Images/Bgpattern.png");
+    text-align: center;
+    padding: 2em;
+    color: #4a6c6f;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1em;
+  }
+  
+  .tilmeld {
+    background-color: #4a6c6f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 2em;
+  }
+  
+  .tilmeld:hover {
+    background-color: #3b5759;
+  }
+  
+  .podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin-top: 3em;
+    flex-wrap: wrap;
+  }
+  
+  .podium-place {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+  
+  .podium-place:hover {
+    transform: scale(1.05);
+  }
+  
+  .podium-place img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
+  }
+  
+  .podium-place strong {
+    font-size: 1.1em;
+    color: #333;
+  }
+  
+  .medal {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Visuel højdeeffekt */
+  .first {
+    height: 200px;
+    transform: translateY(-20px);
+  }
+  
+  .second {
+    height: 160px;
+  }
+  
+  .third {
+    height: 140px;
+  }
+  
