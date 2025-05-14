@@ -58,6 +58,7 @@ function startQuiz() {
   console.log("Quiz starter:", players);
 }
 
+
 /* Quiz start */
 const quiz = [
   {
@@ -102,53 +103,81 @@ let score = 0;
 let answered = false;
 
 function showQuestion() {
-  const q = quiz[currentQuestion]; // Hent det aktuelle spørgsmål
-  document.getElementById("question").innerText = q.question; // Vis spørgsmålet på siden
+  const q = quiz[currentQuestion];
 
-  const optionsDiv = document.getElementById("options"); // Find div til svarmulighederne
-  optionsDiv.innerHTML = ""; // Tøm tidligere svarmuligheder
-  answered = false; // Reset tilstand for besvarelse
+  // Opdater overskriften dynamisk
+  document.getElementById("question-title").innerText = `Spørgsmål ${currentQuestion + 1}`;
 
-  // Tilføj knapper for alle svarmuligheder
+  document.getElementById("question").innerText = q.question;
+
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  const ul = document.createElement("ul");
+  ul.className = "option-list";
+
   q.options.forEach(option => {
-    const btn = document.createElement("button");
-    btn.innerText = option;
-    btn.className = "option"; // Styling af knappen
-    btn.onclick = () => checkAnswer(btn, option); // Funktion, der kaldes ved klik
-    optionsDiv.appendChild(btn); // Tilføj knappen til containeren
+    const li = document.createElement("li");
+    li.innerText = option;
+    li.className = "option-item";
+    li.onclick = () => checkAnswer(li, option);
+    ul.appendChild(li);
   });
 
-  document.getElementById("next-button").style.display = "none"; // Skjul "Næste" knappen indtil et svar er valgt
+  optionsDiv.appendChild(ul);
+
+  // Skjul næste-knappen indtil der svares
+  document.getElementById("next-button").style.display = "none";
+
+  // Skjul eller vis "Tilbage"-knap afhængigt af spørgsmål
+  const backBtn = document.querySelector(".Tilbage");
+  if (backBtn) {
+    backBtn.style.display = currentQuestion === 0 ? "none" : "inline-block";
+  }
 }
 
-function checkAnswer(button, selected) {
-  if (answered) return; // Forhindrer at svare igen
+function checkAnswer(selectedLi, selected) {
+  if (answered) return;
   answered = true;
 
   const correct = quiz[currentQuestion].answer;
   if (selected === correct) {
-    score++; // Øg score hvis svar er korrekt
+    score++;
   }
 
-  // Deaktiver alle knapper
-  document.querySelectorAll(".option").forEach(btn => btn.disabled = true);
-  document.getElementById("next-button").style.display = "inline-block"; // Vis "Næste" knappen
+  document.querySelectorAll(".option-item").forEach(li => {
+    li.classList.add("disabled");
+  });
+
+  document.getElementById("next-button").style.display = "inline-block";
 }
 
 function nextQuestion() {
   currentQuestion++;
   if (currentQuestion < quiz.length) {
-    showQuestion(); // Vis næste spørgsmål
+    answered = false;
+    showQuestion();
   } else {
-    showResult(); // Vis resultat
+    showResult();
+  }
+}
+
+function previousQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    answered = false;
+    showQuestion();
   }
 }
 
 function showResult() {
-  window.location.href = `resultat.html?score=${score}`; // Send score til resultat-siden
+  // Gå til resultat-side med score
+  window.location.href = `resultat.html?score=${score}`;
 }
 
-window.onload = showQuestion; // Start quizzen ved indlæsning
+window.onload = showQuestion;
+/* Quiz slut */
+
 
 
 
