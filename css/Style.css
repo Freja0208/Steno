@@ -6,6 +6,14 @@
   --blaa:#c7dad4;
   --lysrod: #eec9b7;
 }
+
+@font-face {
+  font-family: 'Creato Display';
+  src: url('./fonts/CreatoDisplay-Regular.woff2') format('woff2'),
+       url('./fonts/CreatoDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 /* *************************************************************************** */
 
 /*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
@@ -20,6 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Creato Display', sans-serif;
 }
 
 .cirkel {

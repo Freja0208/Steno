@@ -60,6 +60,8 @@ function startQuiz() {
 
 
 /* Quiz start */
+
+// En array med alle quiz-spørgsmålene, deres svarmuligheder og det korrekte svar
 const quiz = [
   {
     question: "Hvor mange forskellige hormon præventioner har du fået vist i dag?",
@@ -98,60 +100,76 @@ const quiz = [
   }
 ];
 
+// Gemmer hvilket spørgsmål vi er på nu
 let currentQuestion = 0;
+
+// Antal korrekte svar brugeren har givet
 let score = 0;
+
+// Om spørgsmålet er blevet besvaret (forhindrer dobbeltklik)
 let answered = false;
 
+// Viser det aktuelle spørgsmål og svarmuligheder
 function showQuestion() {
   const q = quiz[currentQuestion];
 
-  // Opdater overskriften dynamisk
+  // Opdater spørgsmålstitel (f.eks. "Spørgsmål 3")
   document.getElementById("question-title").innerText = `Spørgsmål ${currentQuestion + 1}`;
 
+  // Vis selve spørgsmålet
   document.getElementById("question").innerText = q.question;
 
+  // Ryd gamle svarmuligheder
   const optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = "";
 
+  // Opret liste til nye svarmuligheder
   const ul = document.createElement("ul");
   ul.className = "option-list";
 
+  // Gennemgå alle svarmuligheder og tilføj dem som klikbare elementer
   q.options.forEach(option => {
     const li = document.createElement("li");
     li.innerText = option;
     li.className = "option-item";
-    li.onclick = () => checkAnswer(li, option);
+    li.onclick = () => checkAnswer(li, option); // Når man klikker, kaldes checkAnswer
     ul.appendChild(li);
   });
 
   optionsDiv.appendChild(ul);
 
-  // Skjul næste-knappen indtil der svares
+  // Skjul næste-knappen, indtil der svares
   document.getElementById("next-button").style.display = "none";
 
-  // Skjul eller vis "Tilbage"-knap afhængigt af spørgsmål
+  // Vis tilbage-knappen (men handlingen styres i previousQuestion-funktionen)
   const backBtn = document.querySelector(".Tilbage");
   if (backBtn) {
-    backBtn.style.display = currentQuestion === 0 ? "none" : "inline-block";
+    backBtn.style.display = "inline-block";
   }
 }
 
+// Tjekker om svaret er korrekt og låser mulighederne
 function checkAnswer(selectedLi, selected) {
-  if (answered) return;
+  if (answered) return; // Stop hvis der allerede er svaret
   answered = true;
 
   const correct = quiz[currentQuestion].answer;
+
+  // Hvis korrekt svar, øg score
   if (selected === correct) {
     score++;
   }
 
+  // Gør alle svar "inaktive", så man ikke kan klikke igen
   document.querySelectorAll(".option-item").forEach(li => {
     li.classList.add("disabled");
   });
 
+  // Vis næste-knap
   document.getElementById("next-button").style.display = "inline-block";
 }
 
+// Går til næste spørgsmål, eller viser resultat hvis quizzen er slut
 function nextQuestion() {
   currentQuestion++;
   if (currentQuestion < quiz.length) {
@@ -162,21 +180,30 @@ function nextQuestion() {
   }
 }
 
+// Tilbage-knap logik:
+// - Hvis vi er på første spørgsmål, så gå til startsiden
+// - Ellers gå ét spørgsmål tilbage
 function previousQuestion() {
-  if (currentQuestion > 0) {
+  if (currentQuestion === 0) {
+    // Første spørgsmål → send brugeren til quiz-startside
+    window.location.href = "quiz.html"; // ← Ret hvis din fil hedder noget andet
+  } else {
     currentQuestion--;
     answered = false;
     showQuestion();
   }
 }
 
+// Viser resultatet ved at sende brugeren til resultat-siden med score som query parameter
 function showResult() {
-  // Gå til resultat-side med score
   window.location.href = `resultat.html?score=${score}`;
 }
 
+// Når siden er indlæst, vis første spørgsmål
 window.onload = showQuestion;
+
 /* Quiz slut */
+
 
 
 
