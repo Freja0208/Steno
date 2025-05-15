@@ -7,52 +7,117 @@
     <link rel="stylesheet" href="/css/Style.css">
 </head>
 <body>
+
     <section class="forside">
     <div class="cirkel">
         <h1>Tryk på et ikon og lær mere om den valgte hormonelle præventionsmetode</h1> 
       </div>
   
+
       <div class="cirkel-container">
+        
+        <h2 class="tekst1">Hormonspiral</h2>
+<h2 class="tekst2">P-ring</h2>
+<h2 class="tekst3">P-plaster</h2>
+<h2 class="tekst4">Minipiller</h2>
+<h2 class="tekst5">P-piller</h2>
+<h2 class="tekst6">P-stav</h2>
+<h2 class="tekst7">P-sprøjte</h2>
     
   <!-- Billedet man klikker på -->
-<img src="css/Ikoner/homonspiral.png" alt="Hormonspiral" class="hormonspiral" onclick="openModal()">
+<img src="css/Ikoner/homonspiral.png" alt="Hormonspiral" class="hormonspiral" onclick="openModal('modal1', 'video1')">
 
 <!-- Skjult video-popup (modal) -->
-<div id="videoModal" class="modal">
+<div id="modal1" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">Tilbage</span>
-    <video id="popupVideo" controls autoplay>
+    <span class="close" onclick="closeModal('modal1', 'video1')">Tilbage</span>
+    <video id="video1" controls preload="none">
       <source src="/css/Videoer/Hormonspiralvideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
-    <a href="/css/Videoer/pringvideo.mp4"><img src="css/Ikoner/p-ring.png" class="pring" alt="2"></a>
-        <a href="/css/Videoer/Pplastervideo.mp4"><img src="css/Ikoner/plaster.png" class="pplaster" alt="3"></a>
-        <a href="/css/Videoer/Minipillevideo.mp4"><img src="css/Ikoner/mini-piller.png" class="minipille" alt="4"></a>
-        <a href="/css/Videoer/Ppillervideo.mp4"><img src="css/Ikoner/p-pille.png" class="ppille" alt="5"></a>
-        <a href="/css/Videoer/Pstavvideo.mp4"><img src="css/Ikoner/p-stav.png" class="pstav" alt="6"></a>
-        <a href="/css/Videoer/Psprøjtevideo.mp4"><img src="css/Ikoner/p-sprøjte.png" class="psprojte" alt="7"></a>
+
+
+<img src="css/Ikoner/p-ring.png" alt="Hormonspiral" class="pring" onclick="openModal('modal2', 'video2')">
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2', 'video2')">Tilbage</span>
+    <video id="video2" controls preload="none">
+      <source src="/css/Videoer/pringvideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<img src="css/Ikoner/plaster.png" alt="Hormonspiral" class="pplaster" onclick="openModal('modal3', 'video3')">
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3', 'video3')">Tilbage</span>
+    <video id="video3" controls preload="none">
+      <source src="/css/Videoer/Pplastervideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<img src="css/Ikoner/mini-piller.png" alt="Hormonspiral" class="minipille" onclick="openModal('modal4', 'video4')">
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4', 'video4')">Tilbage</span>
+    <video id="video4" controls preload="none">
+      <source src="/css/Videoer/Minipillevideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<img src="css/Ikoner/p-pille.png" alt="Hormonspiral" class="ppille" onclick="openModal('modal5', 'video5')">
+
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5', 'video5')">Tilbage</span>
+    <video id="video5" controls preload="none">
+      <source src="/css/Videoer/Ppillervideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<img src="css/Ikoner/p-stav.png" alt="Hormonspiral" class="pstav" onclick="openModal('modal6', 'video6')">
+
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal6', 'video6')">Tilbage</span>
+    <video id="video6" controls preload="none">
+      <source src="/css/Videoer/Pstavvideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<img src="css/Ikoner/p-sprøjte.png" alt="Hormonspiral" class="psprojte" onclick="openModal('modal7', 'video7')">
+
+<div id="modal7" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal7', 'video7')">Tilbage</span>
+    <video id="video7" controls preload="none">
+      <source src="/css/Videoer/Psprøjtevideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+
+
       </div>
 
       <div class="knap-container">
         <a href="/quiz.html"></div><button class="quizknap">Prøv Quizzen</button><a>
-      </div></section>
+      </div>
+    
+    </section>
 
    
-      <script>
-          function openModal() {
-      document.getElementById("videoModal").style.display = "flex";
-      document.getElementById("popupVideo").play();
-    }
+      <script src="Js/js.js">
 
-    function closeModal() {
-      const modal = document.getElementById("videoModal");
-      const video = document.getElementById("popupVideo");
-      video.pause();
-      video.currentTime = 0;
-      modal.style.display = "none";
-    }
       
       </script>
 </body>

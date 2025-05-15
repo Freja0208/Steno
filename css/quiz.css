@@ -6,45 +6,37 @@
 
 /*Variabler til farver og fonte*/
 :root {
-    --Beige: #f5f5dc;
-    --gron:#4a6c6f;
-    --lilla: #b9aedc;
-    --blaa:#c7dad4;
-    --lysrod: #eec9b7;
+  --Beige: #f5f5dc;
+  --gron:#4a6c6f;
+  --lilla: #b9aedc;
+  --blaa:#c7dad4;
+  --lysrod: #eec9b7;
 
-    /*De to skifttyper vi har brugt*/
-    --fatface:"Abril Fatface", serif;
-    --signika: "Signika", sans-serif;
+  @font-face {
+      font-family: 'Creato Display';
+      src: url('./fonts/CreatoDisplay-Regular.woff2') format('woff2'),
+           url('./fonts/CreatoDisplay-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
 }
 /*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
 body {
     background-color: var(--Beige);
     background-image: url("/Images/Bgpattern.png");
     margin-top: 20px;
-      margin-left: 22%;            /* Gør body til flex container */
       justify-content: center;     /* Centrerer vandret */
       align-items: center;         /* Centrerer lodret */
+      font-family: 'Creato Display';
     
 }
 
-.tilbage {
-    background-color: var(--blaa);
-    border: none;
-    color: var(--gron);
-    padding: 10px 20px;
-    margin: 5px 5px;
-    font-size: 16px;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-    margin-left: 85%;
-    margin-bottom: 3%;
-}
 
 .midte {
    background-color: rgba(199, 218, 212, 0.6); 
      border-radius: 5%; 
        width: 800px;
-    height: 500px;
+    height: 700px;
     padding: 4%;
 }
 
@@ -91,56 +83,25 @@ body {
     transition: background-color 0.3s;
   }
   
-  button:hover {
-    background-color: #0056b3;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px 5px;
-    font-size: 16px;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-}
-
- 
-  
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Farve- og font-variabler */
-:root {
-  --Beige: #f5f5dc;
-  --gron: #4a6c6f;
-  --lilla: #b9aedc;
-  --blaa: #c7dad4;
-  --lysrod: #eec9b7;
-
-  --fatface: "Abril Fatface", serif;
-  --signika: "Signika", sans-serif;
-}
-
-/* Basis styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--Beige);
-  background-image: url("/Images/Bgpattern.png");
-  text-align: center;
-  padding: 2em;
-}
 
 /* Knapper */
 .tilbage {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: var(--blaa);
+  top: 22px;
+  right: 80px;
+  background-color: #4a6c6f;
   border: none;
-  color: var(--gron);
+  color: white;
   padding: 10px 20px;
   border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 60px;
+  width: 90px;
+}
+
+.tilbage:hover {
+  background-color: #3b5759;
 }
 
 .tilmeld {
@@ -152,6 +113,8 @@ body {
   border-radius: 6px;
   cursor: pointer;
   margin-top: 1em;
+  width: 250px;
+  height: 60px;
 }
 
 .tilmeld:hover {

@@ -47,7 +47,7 @@ body {
 
 .cirkel h1 {
   font-size: 25px;
-  margin: 20%;
+  margin: 30%;
   align-items: center;
 }
 
@@ -67,8 +67,24 @@ body {
   margin-top: -100%;
 }
 
+.cirkel-container h2 {
+  color: #4A6C6F;
+  font-size: 20px;
+  position: absolute;
+  margin-top: -80%;
+  margin-left: 85%;
+  width: 100%;
+  opacity: 80%;
+}
+
+
 /* Billedet */
 .hormonspiral {
+  width: 200px;
+  cursor: pointer;
+}
+
+.pring {
   width: 200px;
   cursor: pointer;
 }
@@ -83,7 +99,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.8);
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -124,15 +139,22 @@ body {
 
 .hormonspiral { transform: rotate(350deg) translate(250px) rotate(-350deg);}
 
-
-
-.pring          { transform: rotate(35deg)  translate(190px) rotate(-35deg);
-}
+.pring          { transform: rotate(35deg)  translate(200px) rotate(-35deg); scale: 1.05}
 .pplaster       { transform: rotate(90deg)  translate(170px) rotate(-90deg); }
 .minipille      { transform: rotate(153deg) translate(200px) rotate(-153deg); }
 .ppille         { transform: rotate(204deg) translate(230px) rotate(-204deg); }
 .pstav          { transform: rotate(255deg) translate(210px) rotate(-255deg); }
 .psprojte       { transform: rotate(306deg) translate(230px) rotate(-306deg); }
+
+.tekst1 {transform: rotate(0deg) translate(240px) rotate(-0deg);}
+.tekst2 { transform: rotate(40deg)  translate(250px) rotate(-40deg); }
+.tekst3 { transform: rotate(87deg)  translate(210px) rotate(-87deg); }
+.tekst4 { transform: rotate(140deg) translate(210px) rotate(-140deg); }
+.tekst5  { transform: rotate(195deg) translate(200px) rotate(-195deg); }
+.tekst6  { transform: rotate(260deg) translate(168px) rotate(-260deg); }
+.tekst7   { transform: rotate(315deg) translate(205px) rotate(-315deg); }
+
+
 
 .ikon {
   position: absolute;
@@ -169,4 +191,5 @@ body {
   width: 250px;
   margin-top: -30px;
   font-size: 20px;
+  margin-left: 185px;
 }

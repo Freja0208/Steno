@@ -8,15 +8,15 @@
 </head>
 <body>
 
-  <a href="/index.html"><button class="tilbage">Tilbage</button></a>
+  <a href="/index.html"><button class="tilbage">Forside</button></a>
 
   <section class="midte">
     <div class="cirkel2">
-      <h2>Quiz med dine venner</h2>
+      <h2>Afprøv din viden</h2>
       <h3>Test din viden om prævention til kvinder.<br>
-        Dyst om 1. pladsen og bliv klogere undervejs.
+        Prøv at få 7 ud af 7
       </h3> 
-      <h3>Vælg din avatar! Min. 1 – Max. 3 spillere</h3>
+      <h3>Vælg din avatar! </h3>
 
       <div class="cirkel-container" id="avatarContainer">
         <img src="css/Avatars/alien.png" class="avatar" alt="Alien" data-avatar="alien">
@@ -26,18 +26,19 @@
         <img src="css/Avatars/troldmand.png" class="avatar" alt="Troldmand" data-avatar="troldmand">
       </div>
 
-      <button class="tilmeld" onclick="addPlayer()">Tilmeld</button>
-      <div id="playersList"></div>
-
+      <h3>Tryk på start, for at starte quizzen</h3>
       <a href="sprg1.html">
-        <button id="startBtn" class="tilmeld" >Start quiz</button>
+        <button class="tilmeld" onclick="addPlayer()" >Start quiz</button>
+        <div id="playersList"></div>
       </a>
     </div>
   </section>
 
   <script>
+
     const avatars = document.querySelectorAll('.avatar');
     const players = [];
+    const avatar = localStorage.getItem('chosenAvatar') || 'placeholder';
     let selectedAvatar = null;
 
     avatars.forEach(avatar => {
@@ -59,8 +60,8 @@
         return;
       }
 
-      if (players.length >= 3) {
-        alert("Der kan maks være 3 spillere.");
+      if (players.length >= 1) {
+        alert("Der kan maks være 1 spillere.");
         return;
       }
 
@@ -109,7 +110,7 @@
   window.location.reload();
 } else {
   localStorage.removeItem("currentPlayerIndex");
-  window.location.href = "podium.html";
+  window.location.href = "resultat.html";
 }
 
 if (currentIndex + 1 < players.length) {
@@ -117,7 +118,7 @@ if (currentIndex + 1 < players.length) {
   window.location.href = "quiz.html";
 } else {
   localStorage.removeItem("currentPlayerIndex");
-  window.location.href = "podie.html"; // 👈 denne skal matche filnavn
+  window.location.href = "resultat.html"; // 👈 denne skal matche filnavn
 }
 
   </script>

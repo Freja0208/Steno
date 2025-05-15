@@ -2,52 +2,48 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vinderpodie</title>
   <link rel="stylesheet" href="css/podie.css" />
 </head>
 <body>
-
   <h1>🏆 Dit resultat</h1>
-  <div id="podium" class="podium-container"></div>
+  <p id="score-display"></p>
 
-  <button class="tilmeld" onclick="window.location.href='index.html'">Spil igen</button>
+  <div class="podium">
+    <div class="position second" id="second">
+      <img src="placeholder.png" alt="Andenplads">
+      <p>2</p>
+    </div>
+    <div class="position first" id="first">
+      <img src="placeholder.png" alt="Førsteplads">
+      <p>1</p>
+    </div>
+    <div class="position third" id="third">
+      <img src="placeholder.png" alt="Tredjeplads">
+      <p>3</p>
+    </div>
+  </div>
+
+  <button class="Tilbage" onclick="window.location.href='index.html'">Tilbage</button>
 
   <script>
-    const players = JSON.parse(localStorage.getItem("players")) || [];
-    players.sort((a, b) => b.score - a.score); // Sortér efter score
+    const params = new URLSearchParams(window.location.search);
+    const score = parseInt(params.get("score")) || 0;
+    const avatar = localStorage.getItem("chosenAvatar") || "alien.png";
 
-    const container = document.getElementById("podium");
-    const medaljer = ["🥈", "🥇", "🥉"]; // Visuelt: 2. – 1. – 3. plads
+    document.getElementById("score-display").innerText = `Din score: ${score} ud af 7`;
 
-    const placeringer = [
-      { klasse: "second", indeks: 1 },
-      { klasse: "first", indeks: 0 },
-      { klasse: "third", indeks: 2 }
-    ];
+    const first = document.getElementById("first");
+    const second = document.getElementById("second");
+    const third = document.getElementById("third");
 
-    placeringer.forEach((placering, i) => {
-      const spiller = players[placering.indeks];
-      if (!spiller) return;
-
-      const div = document.createElement("div");
-      div.className = `podium-place ${placering.klasse}`;
-      div.innerHTML = `
-        <div class="medal">${medaljer[i]}</div>
-        <img src="css/Avatars/${spiller.avatar}.png" alt="${spiller.avatar}" />
-        <strong>${spiller.score} point</strong>
-      `;
-      container.appendChild(div);
-    });
-
-    localStorage.clear(); // Ryd data til næste spil
+    if (score >= 6) {
+      first.querySelector("img").src = avatar;
+    } else if (score >= 4) {
+      second.querySelector("img").src = avatar;
+    } else {
+      third.querySelector("img").src = avatar;
+    }
   </script>
-
 </body>
 </html>
-
-
-
-
-
-  

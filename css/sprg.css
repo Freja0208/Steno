@@ -1,4 +1,5 @@
-/*Variabler til farver og fonte*/
+/*Freja
+*Variabler til farver og fonte*/
 :root {
     --Beige: #f5f5dc;
     --gron:#4a6c6f;
@@ -19,7 +20,7 @@ body {
     background-color: var(--Beige);
     background-image: url("/Images/Bgpattern.png");
     margin-top: 20px;
-    margin-left: 22%;            /* Gør body til flex container */
+    margin-left: 23%;            /* Gør body til flex container */
     justify-content: center;     /* Centrerer vandret */
     align-items: center;         /* Centrerer lodret */
     font-family: 'Creato Display', sans-serif;
@@ -54,6 +55,7 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s;
     font-size: larger;
+    margin-left: -40px;
   }
   
   .option-item:hover {
@@ -69,8 +71,8 @@ body {
   
 #next-button {
     margin-top: 10px;
-    background-color: var(--blaa);
-    color: var(--gron);
+    background-color: #4a6c6f;
+    color: white;
     border: 0cm;
     padding: 15px;
     border-radius: 15%;
@@ -81,8 +83,8 @@ body {
 
   .Tilbage{
     margin-top: 10px;
-    background-color: var(--blaa);
-    color: var(--gron);
+    background-color: #4a6c6f;
+    color: white;
     border: 0cm;
     padding: 15px;
     border-radius: 15%;
@@ -94,14 +96,19 @@ body {
 
   .Forside {
     position: absolute;
-  top: 50px;
-  right: 50px;
-
-  background-color: var(--blaa);
-  border: none;
-  color: var(--gron);
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
+    top: 22px;
+    right: 80px;
+    background-color: #4a6c6f;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+    height: 60px;
+    width: 90px;
+  }
+  
+  .tilbage:hover {
+    background-color: #3b5759;
+  }

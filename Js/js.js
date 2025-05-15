@@ -1,6 +1,19 @@
 
 
+//forsiden
 
+function openModal(modalId, videoId) {
+  document.getElementById(modalId).style.display = "flex";
+  document.getElementById(videoId).play();
+}
+
+function closeModal(modalId, videoId) {
+  const modal = document.getElementById(modalId);
+  const video = document.getElementById(videoId);
+  video.pause();
+  video.currentTime = 0;
+  modal.style.display = "none";
+}
 
 
 /* quiz spiller points*/
@@ -58,7 +71,7 @@ function startQuiz() {
   console.log("Quiz starter:", players);
 }
 
-
+/*Freja*/
 /* Quiz start */
 
 // En array med alle quiz-spørgsmålene, deres svarmuligheder og det korrekte svar
@@ -194,37 +207,9 @@ function previousQuestion() {
   }
 }
 
-// Viser resultatet ved at sende brugeren til resultat-siden med score som query parameter
-function showResult() {
-  window.location.href = `resultat.html?score=${score}`;
-}
 
 // Når siden er indlæst, vis første spørgsmål
 window.onload = showQuestion;
 
 /* Quiz slut */
-
-
-
-
-
-/*
-//forbinder det hele til alle spørgsmålene
-
-function startQuiz() {
-  if (players.length >= 1) {
-    localStorage.setItem("players", JSON.stringify(players));
-    localStorage.setItem("currentPlayerIndex", "0");
-    window.location.href = "quiz.html";
-  }
-}
-
-//linker til podie siden
-players.slice(0, 3).forEach((p, i) => {
-  container.innerHTML += `
-    <div data-rank="${i + 1}">
-      <img src="css/Avatars/${p.avatar}.png" alt="avatar">
-      <strong>${p.score} point</strong>
-    </div>
-  `;
-});*/
+/*Freja Slut*/
