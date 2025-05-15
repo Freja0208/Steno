@@ -193,6 +193,14 @@ function nextQuestion() {
   }
 }
 
+// Viser resultatet til sidst
+function showResult() {
+  const total = quiz.length;
+  // Send brugeren til resultat.html og giv score og total med i URL'en
+  window.location.href = `resultat.html?score=${score}&total=${total}`;
+}
+
+
 // Tilbage-knap logik:
 // - Hvis vi er på første spørgsmål, så gå til startsiden
 // - Ellers gå ét spørgsmål tilbage
@@ -206,7 +214,6 @@ function previousQuestion() {
     showQuestion();
   }
 }
-
 
 // Når siden er indlæst, vis første spørgsmål
 window.onload = showQuestion;
