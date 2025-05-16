@@ -13,10 +13,8 @@
   <section class="midte">
     <div class="cirkel2">
       <h2>Afprøv din viden</h2>
-      <h3>Test din viden om prævention til kvinder.<br>
-        Prøv at få 7 ud af 7
-      </h3> 
-      <h3>Vælg din avatar! </h3>
+      <h3>Test din viden om prævention til kvinder.<br>Prøv at få 7 ud af 7</h3> 
+      <h3>Vælg din avatar!</h3>
 
       <div class="cirkel-container" id="avatarContainer">
         <img src="css/Avatars/alien.png" class="avatar" alt="Alien" data-avatar="alien">
@@ -26,106 +24,32 @@
         <img src="css/Avatars/troldmand.png" class="avatar" alt="Troldmand" data-avatar="troldmand">
       </div>
 
-      <h3>Tryk på start, for at starte quizzen</h3>
-      <a href="sprg1.html">
-        <button class="tilmeld" onclick="addPlayer()" >Start quiz</button>
-        <div id="playersList"></div>
-      </a>
+      <h3>Tryk på start for at gå til quizzen</h3>
+      <button class="tilmeld" onclick="startQuiz()">Start quiz</button>
     </div>
   </section>
 
   <script>
-
     const avatars = document.querySelectorAll('.avatar');
-    const players = [];
-    const avatar = localStorage.getItem('chosenAvatar') || 'placeholder';
     let selectedAvatar = null;
 
     avatars.forEach(avatar => {
       avatar.addEventListener('click', () => {
-        if (avatar.classList.contains('selected')) {
-          avatar.classList.remove('selected');
-          selectedAvatar = null;
-        } else {
-          avatars.forEach(a => a.classList.remove('selected'));
-          avatar.classList.add('selected');
-          selectedAvatar = avatar.getAttribute('data-avatar');
-        }
+        avatars.forEach(a => a.classList.remove('selected'));
+        avatar.classList.add('selected');
+        selectedAvatar = avatar.getAttribute('data-avatar');
       });
     });
 
-    function addPlayer() {
+    function startQuiz() {
       if (!selectedAvatar) {
         alert("Vælg en avatar først!");
         return;
       }
-
-      if (players.length >= 1) {
-        alert("Der kan maks være 1 spillere.");
-        return;
-      }
-
-      if (players.find(p => p.avatar === selectedAvatar)) {
-        alert("Denne avatar er allerede valgt.");
-        return;
-      }
-
-      players.push({ avatar: selectedAvatar, score: 0 });
-      updatePlayersList();
-
-      avatars.forEach(avatar => {
-        if (avatar.getAttribute('data-avatar') === selectedAvatar) {
-          avatar.style.opacity = "0.5";
-          avatar.style.pointerEvents = "none";
-          avatar.classList.remove('selected');
-        }
-      });
-
-      selectedAvatar = null;
-
-      if (players.length >= 1) {
-        document.getElementById("startBtn").disabled = false;
-      }
+      localStorage.setItem("chosenAvatar", `css/Avatars/${selectedAvatar}.png`);
+      window.location.href = "sprg1.html"; // Skift til første spørgsmål
     }
-
-    function updatePlayersList() {
-      const list = document.getElementById("playersList");
-      list.innerHTML = "";
-
-      players.forEach((player, index) => {
-        list.innerHTML += `
-          <div class="player-container">
-            <div class="score" id="score-${index}">0</div>
-            <div class="avatar-wrapper">
-              <img src="css/Avatars/${player.avatar}.png" alt="${player.avatar}" class="avatar-display" />
-              <p>Spiller ${index + 1}</p>
-            </div>
-          </div>
-        `;
-      });
-    }
-
-    if (currentPlayerIndex + 1 < players.length) {
-  localStorage.setItem("currentPlayerIndex", currentPlayerIndex + 1);
-  window.location.reload();
-} else {
-  localStorage.removeItem("currentPlayerIndex");
-  window.location.href = "resultat.html";
-}
-
-if (currentIndex + 1 < players.length) {
-  localStorage.setItem("currentPlayerIndex", currentIndex + 1);
-  window.location.href = "quiz.html";
-} else {
-  localStorage.removeItem("currentPlayerIndex");
-  window.location.href = "resultat.html"; // 👈 denne skal matche filnavn
-}
-
   </script>
-
-
-
 
 </body>
 </html>
-
