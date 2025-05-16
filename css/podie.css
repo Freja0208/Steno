@@ -76,3 +76,7 @@ body {
     font-size: large;
     margin-top: 20px;
   }
+
+  #score-display{
+    font-size: 40px;
+  }
