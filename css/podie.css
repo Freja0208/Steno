@@ -51,7 +51,7 @@ body {
     background-color: #dce6e6;
     border-radius: 10px 10px 0 0;
     height: 200px;
-    width: 150px;
+    width: 175px;
     background-color: var(--blaa);
     margin-top: -100px;
     color: var(--Beige);
@@ -59,10 +59,10 @@ body {
   }
   
   img {
-    width: 130px;
+    width: 150px;
     height: auto;
     margin-bottom: 30px;
-    margin-top: -90px;
+    margin-top: -110px;
   }
   
   .Tilbage{
