@@ -25,7 +25,8 @@ let selectedAvatar = null;
 document.querySelectorAll(".avatar-option").forEach(img => {
   img.addEventListener("click", () => {
     // Marker valgt avatar
-    document.querySelectorAll(".avatar-option").forEach(i => i.classList.remove("selected"));
+    document.querySelectorAll(".avatar-option").forEach
+    (i => i.classList.remove("selected"));
     img.classList.add("selected");
     selectedAvatar = img.dataset.avatar;
   });
@@ -51,7 +52,8 @@ function addPlayer() {
   updatePlayersList();
 
   selectedAvatar = null;
-  document.querySelectorAll(".avatar-option").forEach(i => i.classList.remove("selected"));
+  document.querySelectorAll(".avatar-option").forEach
+  (i => i.classList.remove("selected"));
 }
 
 function updatePlayersList() {
