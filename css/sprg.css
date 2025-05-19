@@ -39,7 +39,7 @@ body {
   font-size: 20px;
   text-align: center;
   margin-top: 140px;
-  margin-left: 50px;
+  margin-left: 70px;
   }
 
   .option-list {
@@ -56,11 +56,11 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s;
     font-size: larger;
-    margin-left: -20px;
+    margin-right: -20px;
   }
   .option-item {
     width: 80%;
-    margin-left: 10%;
+    margin-left: 5%;
   }
   .option-item:hover {
     background-color: var(--gron);
@@ -84,6 +84,12 @@ body {
     width: 200px;
     font-size: large;
   }
+  #next-button:hover {
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    transform: scale(1.1);
+    background-color: #3b5759;
+    }
 
   .Tilbage{
     margin-top: 10px;
@@ -113,10 +119,19 @@ body {
       width: 100px;
       font-size: 16px;
     }
-  
-  .tilbage:hover {
+    .Forside:hove{
+      transition: transform 0.2s ease;
+      transform-origin: center;
+      transform: scale(1.1);
+      background-color: #3b5759;
+      }
+
+  .Tilbage:hover {
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    transform: scale(1.1);
     background-color: #3b5759;
-  }
+    }
 
   #question-title {
     display: block;

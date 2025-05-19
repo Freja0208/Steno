@@ -76,6 +76,12 @@ body {
     width: 175px;
     font-size: large;
   }
+  .Tilbage:hover {
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    transform: scale(1.1);
+    background-color: #3b5759;
+    }
 
   #score-display{
     font-size: 35px;
