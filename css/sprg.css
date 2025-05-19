@@ -6,15 +6,15 @@
     --lilla: #b9aedc;
     --blaa:#c7dad4;
     --lysrod: #eec9b7;
-
+}
     @font-face {
         font-family: 'Creato Display';
         src: url('./fonts/CreatoDisplay-Regular.woff2') format('woff2'),
              url('./fonts/CreatoDisplay-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
-      }
-}
+    }
+    
 /*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
 body {
     background-color: var(--Beige);
@@ -27,18 +27,19 @@ body {
     
 }
 .cirkel {
-    width: 700px;
-    height: 350px;
-    border-radius: 10%;
-    background-color: var(--blaa);
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Tilføjet for at centrere tekst/indhold */
-    color: var(--gron);
-    font-size: 20px;
-    text-align: center; 
-    margin-top: 140px;
-    margin-left: 50px;
+  width: 700px;
+  height: 350px;
+  border-radius: 20px;
+  background-color: var(--blaa);
+  display: flex;
+  flex-direction: column; /* ← Denne linje er vigtig */
+  align-items: center;
+  justify-content: center;
+  color: var(--gron);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 140px;
+  margin-left: 50px;
   }
 
   .option-list {
@@ -55,7 +56,7 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s;
     font-size: larger;
-    margin-left: -40px;
+    margin-left: -20px;
   }
   
   .option-item:hover {
@@ -75,7 +76,7 @@ body {
     color: white;
     border: 0cm;
     padding: 15px;
-    border-radius: 15%;
+    border-radius: 7px;
     margin-left: 125px;
     width: 200px;
     font-size: large;
@@ -87,7 +88,7 @@ body {
     color: white;
     border: 0cm;
     padding: 15px;
-    border-radius: 15%;
+    border-radius: 7px;
     margin-left: 150px;
     width: 200px;
     font-size: large;
@@ -95,20 +96,33 @@ body {
 
 
   .Forside {
-    position: absolute;
-    top: 22px;
-    right: 80px;
-    background-color: #4a6c6f;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    transition: 0.3s;
-    cursor: pointer;
-    height: 60px;
-    width: 90px;
-  }
+      position: absolute;
+      top: 22px;
+      right: 80px;
+      background-color: #4a6c6f;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s;
+      cursor: pointer;
+      height: 60px;
+      width: 100px;
+      font-size: 16px;
+    }
   
   .tilbage:hover {
     background-color: #3b5759;
   }
+
+  #question-title {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  #quiz-container {
+    display: block;
+    width: 100%;
+  }
+  

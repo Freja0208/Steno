@@ -46,7 +46,7 @@ body {
 }
 
 .cirkel h1 {
-  font-size: 25px;
+  font-size: 20px;
   margin: 30%;
   align-items: center;
 }
@@ -69,25 +69,14 @@ body {
 
 .cirkel-container h2 {
   color: #4A6C6F;
-  font-size: 20px;
+  font-size: 15px;
   position: absolute;
-  margin-top: -80%;
-  margin-left: 85%;
+  margin-top: -79%;
+  margin-left: 86%;
   width: 100%;
   opacity: 80%;
 }
 
-
-/* Billedet */
-.hormonspiral {
-  width: 200px;
-  cursor: pointer;
-}
-
-.pring {
-  width: 200px;
-  cursor: pointer;
-}
 
 /* MODAL popup baggrund */
 .modal {
@@ -123,23 +112,87 @@ body {
 .close {
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
-  top: 5px;
+  top: 100px;
   right: 15px;
   font-size: 20px;
   padding-top: 10px;
   text-align: center;
-  color: black;
-  background-color: #c7dad4;
-  border-radius: 20%;
+  background-color: var(--gron);
+  color: white;
+  border-radius: 7px;
   height: 8%;
   width: 10%;
   cursor: pointer;
   z-index: 10;
 }
 
-.hormonspiral { transform: rotate(350deg) translate(250px) rotate(-350deg);}
 
-.pring          { transform: rotate(35deg)  translate(200px) rotate(-35deg); scale: 1.05}
+.pring          { transform: rotate(35deg)  translate(200px) rotate(-35deg); scale: 1.05;
+}
+
+.pring {
+  transform: rotate(35deg) translate(200px) rotate(-35deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.pring:hover {
+  transform: rotate(35deg) translate(190px) rotate(-35deg) scale(1.1);
+}
+.hormonspiral {
+  transform: rotate(350deg) translate(250px) rotate(-350deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.hormonspiral:hover {
+  transform: rotate(350deg) translate(250px) rotate(-350deg) scale(1.1);
+}
+
+.pplaster {
+  transform: rotate(90deg) translate(170px) rotate(-90deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.pplaster:hover {
+  transform: rotate(90deg) translate(170px) rotate(-90deg) scale(1.1);
+}
+
+.minipille {
+  transform: rotate(153deg) translate(200px) rotate(-153deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.minipille:hover {
+  transform: rotate(153deg) translate(200px) rotate(-153deg) scale(1.1);
+}
+
+.ppille {
+  transform: rotate(204deg) translate(230px) rotate(-204deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.ppille:hover {
+  transform: rotate(204deg) translate(230px) rotate(-204deg) scale(1.1);
+}
+
+.pstav {
+  transform: rotate(255deg) translate(210px) rotate(-255deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.pstav:hover {
+  transform: rotate(255deg) translate(210px) rotate(-255deg) scale(1.1);
+}
+
+.psprojte {
+  transform: rotate(306deg) translate(230px) rotate(-306deg);
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.psprojte:hover {
+  transform: rotate(306deg) translate(230px) rotate(-306deg) scale(1.1);
+}
+
+
 .pplaster       { transform: rotate(90deg)  translate(170px) rotate(-90deg); }
 .minipille      { transform: rotate(153deg) translate(200px) rotate(-153deg); }
 .ppille         { transform: rotate(204deg) translate(230px) rotate(-204deg); }
@@ -156,26 +209,6 @@ body {
 
 
 
-.ikon {
-  position: absolute;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.ikon img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%; /* hvis de skal være runde */
-  transition: transform 0.2s ease;
-}
-
-.ikon:hover img {
-  transform: scale(1.1);
-}
-
 .knap-container {
   display: flex;
   justify-content: center;
@@ -191,5 +224,11 @@ body {
   width: 250px;
   margin-top: -30px;
   font-size: 20px;
-  margin-left: 185px;
+}
+
+.quizknap:hover {
+transition: transform 0.2s ease;
+transform-origin: center;
+transform: scale(1.1);
+background-color: #3b5759;
 }

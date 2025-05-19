@@ -16,16 +16,17 @@ function closeModal(modalId, videoId) {
 }
 
 
+
 /* quiz spiller points*/
 
 let players = [];
 let selectedAvatar = null;
 
-document.querySelectorAll('.avatar-option').forEach(img => {
-  img.addEventListener('click', () => {
+document.querySelectorAll(".avatar-option").forEach(img => {
+  img.addEventListener("click", () => {
     // Marker valgt avatar
-    document.querySelectorAll('.avatar-option').forEach(i => i.classList.remove('selected'));
-    img.classList.add('selected');
+    document.querySelectorAll(".avatar-option").forEach(i => i.classList.remove("selected"));
+    img.classList.add("selected");
     selectedAvatar = img.dataset.avatar;
   });
 });
@@ -50,12 +51,12 @@ function addPlayer() {
   updatePlayersList();
 
   selectedAvatar = null;
-  document.querySelectorAll('.avatar-option').forEach(i => i.classList.remove('selected'));
+  document.querySelectorAll(".avatar-option").forEach(i => i.classList.remove("selected"));
 }
 
 function updatePlayersList() {
-  const list = document.getElementById('playersList');
-  list.innerHTML = '<h3>Deltagere:</h3>';
+  const list = document.getElementById("playersList");
+  list.innerHTML = "<h3>Deltagere:</h3>";
   players.forEach(p => {
     list.innerHTML += `<div><img src="${p.avatar}" width="30" /></div>`;
   });
@@ -212,6 +213,16 @@ function previousQuestion() {
     currentQuestion--;
     answered = false;
     showQuestion();
+  }
+}
+
+function goBack() {
+  if (document.referrer && document.referrer !== window.location.href) {
+    // Hvis der er en forrige side, gå tilbage
+    window.history.back();
+  } else {
+    // Ellers send brugeren til startsiden
+    window.location.href = "quiz.html";
   }
 }
 

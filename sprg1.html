@@ -10,31 +10,23 @@
 <body>
 
 <section class="cirkel">
-  <div id="quiz-container">
-   <h1 id="question-title"></h1>
+  <h1 id="question-title"> </h1>
+<div id="quiz-container">
     <div class="question" id="question"></div>
-    <div id="options"></div>
+    <div id="options"></div> 
+</div>
 </section>
 
-<a href="/index.html"><button class="Forside">Forside</button></a>
+<form action="/index.html"><button class="Forside">Forside</button></form>
 
     <button class="Tilbage" onclick="previousQuestion()">Tilbage</button>
     <button id="next-button" onclick="nextQuestion()" style="display: none;">Næste</button>
 
     <div id="resultat"></div>
-  </div>
+ 
 
-  <script 
-  src="Js/js.js">
-function goBack() {
-    if (document.referrer && document.referrer !== window.location.href) {
-      // Hvis der er en forrige side, gå tilbage
-      window.history.back();
-    } else {
-      // Ellers send brugeren til startsiden
-      window.location.href = "quiz.html";
-    }
-  }
-  </script>
+  <script src="Js/js.js"></script>
+
+ 
 </body>
 </html>

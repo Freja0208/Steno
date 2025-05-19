@@ -11,7 +11,7 @@
   --lilla: #b9aedc;
   --blaa:#c7dad4;
   --lysrod: #eec9b7;
-
+}
   @font-face {
       font-family: 'Creato Display';
       src: url('./fonts/CreatoDisplay-Regular.woff2') format('woff2'),
@@ -19,7 +19,7 @@
       font-weight: normal;
       font-style: normal;
     }
-}
+
 body {
     font-family: "Signika", sans-serif;
     background-color: #f5f5dc;
@@ -29,9 +29,10 @@ body {
     color: #4a6c6f;
   }
   
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1em;
+  h1 {
+    font-size: 40px;
+    margin-top: 50px;
+    
   }
   
   
@@ -49,13 +50,13 @@ body {
     width: 100px;
     text-align: center;
     background-color: #dce6e6;
-    border-radius: 10px 10px 0 0;
-    height: 200px;
+    border-radius: 10px;
+    height: 220px;
     width: 175px;
-    background-color: var(--blaa);
-    margin-top: -100px;
-    color: var(--Beige);
-    font-size:40px;
+    background-color: var(--gron);
+    margin-top: -120px;
+    color: white;
+    font-size: 40px;
   }
   
   img {
@@ -66,17 +67,32 @@ body {
   }
   
   .Tilbage{
-    margin-top: 10px;
-    background-color: var(--blaa);
-    color: var(--gron);
+    margin-top: 40px;
+    background-color: var(--gron);
+    color: white;
     border: 0cm;
     padding: 15px;
-    border-radius: 15%;
-    width: 150px;
+    border-radius: 7px;
+    width: 175px;
     font-size: large;
-    margin-top: 20px;
   }
 
   #score-display{
-    font-size: 40px;
+    font-size: 35px;
+    border: #4a6c6f;
+    margin-top: 40px;
   }
+
+  .midtesec {
+    position: absolute;           /* Gør det muligt at placere den frit */
+    top: 50px;                    /* Justér hvor langt nede den skal starte */
+    left: 50%;
+    transform: translateX(-50%);  /* Centrer den horisontalt */
+    background-color: rgba(199, 218, 212, 0.6);
+    border-radius: 5%;
+    width: 480px;
+    height: 650px;
+    padding: 4%;
+    z-index: -1;                   /* Læg den bag andre elementer med højere z-index */
+  }
+  
