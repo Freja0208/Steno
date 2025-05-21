@@ -110,7 +110,7 @@ const quiz = [
     answer: "2"
   },
   {
-    question: "Hvor mange af præventionerne skal en læge indsætte præventionen?",
+    question: "Hvor mange af præventionsmetoderne kræver, at en læge indsætter dem?",
     options: ["3", "4", "2"],
     answer: "3"
   }
