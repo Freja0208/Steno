@@ -26,6 +26,8 @@ body {
     font-family: 'Creato Display', sans-serif;
     
 }
+
+/*Styling af boksen med spørgsmålene*/
 .cirkel {
   width: 700px;
   height: 350px;
@@ -42,6 +44,7 @@ body {
   margin-left: 70px;
   }
 
+  /*Styling af valgmulighederne start*/
   .option-list {
     list-style-type:none;
   }
@@ -71,8 +74,9 @@ body {
     pointer-events: none;
     opacity: 0.6;
   }
-  
-  
+  /*Styling af valgmulighederne slut*/
+
+/*Styling af næste knappen start*/
 #next-button {
     margin-top: 10px;
     background-color: #4a6c6f;
@@ -90,7 +94,9 @@ body {
     transform: scale(1.1);
     background-color: #3b5759;
     }
+/*Styling af næste knappen slut*/
 
+/*Styling af tilbage knappen start*/
   .Tilbage{
     margin-top: 10px;
     background-color: #4a6c6f;
@@ -103,7 +109,15 @@ body {
     font-size: large;
   }
 
+  .Tilbage:hover {
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    transform: scale(1.1);
+    background-color: #3b5759;
+    }
+/*Styling af tilbageknappen slut*/
 
+/*Styling af Forside knappen start*/
   .Forside {
       position: absolute;
       top: 22px;
@@ -125,20 +139,16 @@ body {
       transform: scale(1.1);
       background-color: #3b5759;
       }
-
-  .Tilbage:hover {
-    transition: transform 0.2s ease;
-    transform-origin: center;
-    transform: scale(1.1);
-    background-color: #3b5759;
-    }
-
+/*Styling af forside slut*/
+  
+/*Styling af sprøgsmåloverskiften*/
   #question-title {
     display: block;
     width: 100%;
     margin-bottom: 1rem;
   }
   
+  /*Styling af selve sprøgsmålene*/
   #quiz-container {
     display: block;
     width: 100%;

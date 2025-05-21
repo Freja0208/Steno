@@ -9,11 +9,12 @@
 <body>
 
     <section class="forside">
-    <div class="cirkel">
+    <div class="cirkel"> <!-- midterteksten -->
         <h1>Tryk på et ikon og lær mere om den valgte hormonelle præventionsmetode</h1> 
       </div>
 
       <div class="cirkel-container">
+        <!-- Tekstcirklen -->
         <h2 class="tekst1">Hormonspiral</h2>
 <h2 class="tekst2">P-ring</h2>
 <h2 class="tekst3">P-plaster</h2>
@@ -28,7 +29,7 @@
 <!-- Skjult video-popup (modal) -->
 <div id="modal1" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal1', 'video1')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal1', 'video1')">Tilbage</span> <!-- Luk knappen -->
     <video id="video1" controls preload="none">
       <source src="/css/Videoer/Hormonspiralvideo.mp4" type="video/mp4">
     </video>
@@ -36,67 +37,78 @@
 </div>
 
 
-
+<!-- Billedet man klikker på -->
 <img src="css/Ikoner/p-ring.png" alt="Hormonspiral" class="pring" onclick="openModal('modal2', 'video2')">
 
+<!-- Skjult video-popup (modal) -->
 <div id="modal2" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal2', 'video2')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal2', 'video2')">Tilbage</span> <!-- Luk knappen -->
     <video id="video2" controls preload="none">
       <source src="/css/Videoer/pringvideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
+<!-- Billedet man klikker på -->
 <img src="css/Ikoner/plaster.png" alt="Hormonspiral" class="pplaster" onclick="openModal('modal3', 'video3')">
 
+<!-- Skjult video-popup (modal) -->
 <div id="modal3" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal3', 'video3')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal3', 'video3')">Tilbage</span> <!-- Luk knappen -->
     <video id="video3" controls preload="none">
       <source src="/css/Videoer/Pplastervideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
+<!-- Billedet man klikker på -->
 <img src="css/Ikoner/mini-piller.png" alt="Hormonspiral" class="minipille" onclick="openModal('modal4', 'video4')">
 
+<!-- Skjult video-popup (modal) -->
 <div id="modal4" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal4', 'video4')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal4', 'video4')">Tilbage</span> <!-- Luk knappen -->
     <video id="video4" controls preload="none">
       <source src="/css/Videoer/Minipillevideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
+<!-- Billedet man klikker på -->
 <img src="css/Ikoner/p-pille.png" alt="Hormonspiral" class="ppille" onclick="openModal('modal5', 'video5')">
 
+<!-- Skjult video-popup (modal) -->
 <div id="modal5" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal5', 'video5')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal5', 'video5')">Tilbage</span> <!-- Luk knappen -->
     <video id="video5" controls preload="none">
       <source src="/css/Videoer/Ppillervideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
+<!-- Billedet man klikker på -->
 <img src="css/Ikoner/p-stav.png" alt="Hormonspiral" class="pstav" onclick="openModal('modal6', 'video6')">
 
+<!-- Skjult video-popup (modal) -->
 <div id="modal6" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal6', 'video6')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal6', 'video6')">Tilbage</span> <!-- Luk knappen -->
     <video id="video6" controls preload="none">
       <source src="/css/Videoer/Pstavvideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
+<!-- Billedet man klikker på -->
 <img src="css/Ikoner/p-sprøjte.png" alt="Hormonspiral" class="psprojte" onclick="openModal('modal7', 'video7')">
 
+<!-- Skjult video-popup (modal) -->
 <div id="modal7" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modal7', 'video7')">Tilbage</span>
+    <span class="close" onclick="closeModal('modal7', 'video7')">Tilbage</span> <!-- Luk knappen -->
     <video id="video7" controls preload="none">
       <source src="/css/Videoer/Psprøjtevideo.mp4" type="video/mp4">
     </video>
@@ -105,6 +117,7 @@
 
 </div>
 
+<!-- Quiz kanppen -->
       <div class="knap-container">
        <form action="/quiz.html"><button class="quizknap">Prøv Quizzen</button></form>
       </div>
@@ -112,7 +125,7 @@
     </section>
 
 
-
+<!-- Js linket -->
       <script src="Js/js.js"></script>
 
 

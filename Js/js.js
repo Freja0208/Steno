@@ -2,76 +2,40 @@
 
 //forsiden
 
+//Åbner videoen ved at trykke på et modal(ikonerne)
 function openModal(modalId, videoId) {
   document.getElementById(modalId).style.display = "flex";
-  document.getElementById(videoId).play();
+  document.getElementById(videoId).play(); //afspiller video
 }
 
+//lukker videoen ved at trykke på tilbage knap
 function closeModal(modalId, videoId) {
-  const modal = document.getElementById(modalId);
-  const video = document.getElementById(videoId);
+  const modal = document.getElementById(modalId); 
+  const video = document.getElementById(videoId);//video
   video.pause();
   video.currentTime = 0;
   modal.style.display = "none";
 }
+/* avatar valg*/
 
-
-
-/* quiz spiller points*/
-
-let players = [];
+const avatars = document.querySelectorAll('.avatar');
 let selectedAvatar = null;
 
-document.querySelectorAll(".avatar-option").forEach(img => {
-  img.addEventListener("click", () => {
-    // Marker valgt avatar
-    document.querySelectorAll(".avatar-option").forEach
-    (i => i.classList.remove("selected"));
-    img.classList.add("selected");
-    selectedAvatar = img.dataset.avatar;
+avatars.forEach(avatar => {
+  avatar.addEventListener('click', () => {
+    avatars.forEach(a => a.classList.remove('selected'));
+    avatar.classList.add('selected');
+    selectedAvatar = avatar.getAttribute('data-avatar');
   });
 });
 
-function addPlayer() {
-  if (!selectedAvatar) {
-    alert("Vælg en avatar");
-    return;
-  }
-
-  if (players.length >= 5) {
-    alert("Maks. 5 deltagere");
-    return;
-  }
-
-  if (players.some(p => p.avatar === selectedAvatar)) {
-    alert("Denne avatar er allerede valgt");
-    return;
-  }
-
-  players.push({ avatar: selectedAvatar, score: 0 });
-  updatePlayersList();
-
-  selectedAvatar = null;
-  document.querySelectorAll(".avatar-option").forEach
-  (i => i.classList.remove("selected"));
-}
-
-function updatePlayersList() {
-  const list = document.getElementById("playersList");
-  list.innerHTML = "<h3>Deltagere:</h3>";
-  players.forEach(p => {
-    list.innerHTML += `<div><img src="${p.avatar}" width="30" /></div>`;
-  });
-}
-
 function startQuiz() {
-  if (players.length < 2) {
-    alert("Minimum 2 deltagere");
+  if (!selectedAvatar) {
+    alert("Vælg en avatar først!");
     return;
   }
-  
-  // Start quizzen – fx vis første spørgsmål
-  console.log("Quiz starter:", players);
+  localStorage.setItem("chosenAvatar", `css/Avatars/${selectedAvatar}.png`);
+  window.location.href = "sprg1.html"; // Skift til første spørgsmål
 }
 
 /*Freja*/
@@ -233,3 +197,34 @@ window.onload = showQuestion;
 
 /* Quiz slut */
 /*Freja Slut*/
+
+/* Resultatside */
+const params = new URLSearchParams(window.location.search);
+const resultScore = parseInt(params.get("score")) || 0;
+const avatar = localStorage.getItem("chosenAvatar") || "css/Avatars/placeholder.png";
+
+document.getElementById("score-display").innerText = `Din score: ${resultScore} ud af 7`;
+document.getElementById("avatar-display").src = avatar;
+
+// Lyd + konfetti
+window.addEventListener('load', () => {
+  const lyd = document.getElementById("result-sound");
+  const knap = document.getElementById("play-sound-btn");
+
+  lyd.play().catch(() => {
+    knap.style.display = "inline-block";
+  });
+
+  knap.addEventListener("click", () => {
+    lyd.play();
+    knap.style.display = "none";
+  });
+
+  confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+});
+
+localStorage.removeItem("chosenAvatar");

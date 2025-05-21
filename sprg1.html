@@ -9,22 +9,31 @@
 </head>
 <body>
 
+<!-- Boksen som indeholder spørgsmålene  -->
 <section class="cirkel">
+<!-- Spørgmål overskiften ændres via js  -->
   <h1 id="question-title"> </h1>
+<!-- Spørgmålene vises, og de skifter via js -->
 <div id="quiz-container">
     <div class="question" id="question"></div>
+<!-- Svarmulighederne vises og skiftes via js  -->
     <div id="options"></div> 
 </div>
 </section>
+<!-- Boksen som indeholder spørgsmålene sulter-->
 
+<!-- Forside knappen  -->
 <form action="/index.html"><button class="Forside">Forside</button></form>
 
+<!-- Tilbage knappen, som ændres til hvilken side via js  -->
     <button class="Tilbage" onclick="previousQuestion()">Tilbage</button>
+  <!-- Næste knappen, som ændres til hvilken side via js  -->
     <button id="next-button" onclick="nextQuestion()" style="display: none;">Næste</button>
 
+<!-- Resultatet gemmes via js  -->
     <div id="resultat"></div>
  
-
+<!-- Link til js  -->
   <script src="Js/js.js"></script>
 
  

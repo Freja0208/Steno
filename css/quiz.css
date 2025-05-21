@@ -13,6 +13,7 @@
   --lysrod: #eec9b7;
 }
 
+/*Fonte*/
   @font-face {
       font-family: 'Creato Display';
       src: url('./fonts/CreatoDisplay-Regular.woff2') format('woff2'),
@@ -34,7 +35,7 @@ body {
 
 
 .midte {
-   background-color: rgba(199, 218, 212, 0.6); 
+   background-color: rgba(199, 218, 212, 0.6); /*skruer opasitet ned*/
      border-radius: 5%; 
        width: 800px;
     height: 700px;
@@ -96,7 +97,7 @@ body {
   padding: 10px 20px;
   border-radius: 6px;
   transition: 0.3s;
-  cursor: pointer;
+  cursor: pointer; /*kan klikkes på*/
   height: 60px;
   width: 100px;
   font-size: 16px;
@@ -106,7 +107,7 @@ body {
   background-color: #3b5759;
     transition: transform 0.2s ease;
     transform-origin: center;
-    transform: scale(1.1);
+    transform: scale(1.1); /*størrelse*/
 }
 
 .tilmeld {
@@ -116,7 +117,7 @@ body {
   font-size: 18px;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer; /*klikbart*/
   margin-top: 1em;
   width: 250px;
   height: 60px;
@@ -125,7 +126,7 @@ body {
 .tilmeld:hover {
   transition: transform 0.2s ease;
   transform-origin: center;
-  transform: scale(1.1);
+  transform: scale(1.1); /*størrelse*/
   background-color: #3b5759;
   }
 
@@ -161,12 +162,12 @@ body {
   height: 100px;
   border-radius: 50%;
   border: 3px solid transparent;
-  cursor: pointer;
+  cursor: pointer; /*klikbar*/
   transition: transform 0.2s, border 0.2s;
 }
 
 .avatar:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /*størrelse*/
 }
 
 .selected {

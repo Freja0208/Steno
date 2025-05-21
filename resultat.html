@@ -8,15 +8,19 @@
 </head>
 <body>
 
+  <!-- Stor firkanten -->
   <section class="midtesec"></section>
 
+  <!-- Vises score via js -->
 <section id="score">
   <h1>🏆 Dit resultat</h1>
   <p id="score-display"></p>
 </section>
 
+<!-- Firkanten hvor ens avatar kommer på -->
 <div class="podium">
   <div class="position">
+    <!-- Den valgte avatar vises -->
     <img id="avatar-display" src="css/Avatars/placeholder.png" alt="Din avatar">
     <p>Flot klaret!</p>
   </div>
@@ -33,42 +37,8 @@
   <source src="css/klappelyd.mp3" type="audio/mpeg">
   Din browser understøtter ikke lyd.
 </audio>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const score = parseInt(params.get("score")) || 0;
-  const avatar = localStorage.getItem("chosenAvatar") || "css/Avatars/placeholder.png";
-
-  document.getElementById("score-display").innerText = `Din score: ${score} ud af 7`;
-  document.getElementById("avatar-display").src = avatar;
-
-  // Automatisk afspilning af lyd
-  window.addEventListener("DOMContentLoaded", () => {
-    const lyd = document.getElementById("result-sound");
-    const knap = document.getElementById("play-sound-btn");
-
-    lyd.play().catch(() => {
-      // Hvis afspilning mislykkes (typisk pga. browserregler), vis backup-knap
-      knap.style.display = "inline-block";
-    });
-
-    // Når brugeren klikker backup-knappen, afspil lyden
-    knap.addEventListener("click", () => {
-      lyd.play();
-      knap.style.display = "none";
-    });
-  });
-
-  window.addEventListener('load', () => {
-    confetti({
-      particleCount: 150,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-  });
-  
-  localStorage.removeItem("chosenAvatar");
-</script>
+<!-- Link til js -->
+<script src="/Js/js.js"></script>
 
 </body>
 </html>

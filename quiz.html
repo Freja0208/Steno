@@ -8,14 +8,17 @@
 </head>
 <body>
 
+    <!-- Tilbageknap -->
   <form action="/index.html"><button class="tilbage">Forside</button></form>
 
+    <!-- midterteksten -->
   <section class="midte">
     <div class="cirkel2">
       <h2>Afprøv din viden</h2>
       <h3>Test din viden om prævention til kvinder.<br>Prøv at få 7 ud af 7</h3> 
       <h3>Vælg din avatar!</h3>
 
+        <!-- Avatarsne -->
       <div class="cirkel-container" id="avatarContainer">
         <img src="css/Avatars/alien.png" class="avatar" alt="Alien" data-avatar="alien">
         <img src="css/Avatars/ulv.png" class="avatar" alt="Ulv" data-avatar="ulv">
@@ -24,32 +27,14 @@
         <img src="css/Avatars/troldmand.png" class="avatar" alt="Troldmand" data-avatar="troldmand">
       </div>
 
+        <!-- startknappen -->
       <h3>Tryk på start for at gå til quizzen</h3>
       <button class="tilmeld" onclick="startQuiz()">Start quiz</button>
     </div>
   </section>
 
-  <script>
-    const avatars = document.querySelectorAll('.avatar');
-    let selectedAvatar = null;
-
-    avatars.forEach(avatar => {
-      avatar.addEventListener('click', () => {
-        avatars.forEach(a => a.classList.remove('selected'));
-        avatar.classList.add('selected');
-        selectedAvatar = avatar.getAttribute('data-avatar');
-      });
-    });
-
-    function startQuiz() {
-      if (!selectedAvatar) {
-        alert("Vælg en avatar først!");
-        return;
-      }
-      localStorage.setItem("chosenAvatar", `css/Avatars/${selectedAvatar}.png`);
-      window.location.href = "sprg1.html"; // Skift til første spørgsmål
-    }
-  </script>
+    <!-- Js link -->
+  <script src="/Js/js.js"></script>
 
 </body>
 </html>

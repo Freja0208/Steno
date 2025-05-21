@@ -12,6 +12,8 @@
   --blaa:#c7dad4;
   --lysrod: #eec9b7;
 }
+
+/*fonte*/
   @font-face {
       font-family: 'Creato Display';
       src: url('./fonts/CreatoDisplay-Regular.woff2') format('woff2'),
@@ -20,10 +22,11 @@
       font-style: normal;
     }
 
+    /*hele siden*/
 body {
     font-family: "Signika", sans-serif;
     background-color: #f5f5dc;
-    background-image: url("/Images/Bgpattern.png");
+    background-image: url("/Images/Bgpattern.png"); /*møsntret baggrund*/
     text-align: center;
     padding: 2em;
     color: #4a6c6f;
@@ -36,10 +39,10 @@ body {
   }
   
   
-  /*freja*/
+  /*podiet*/
   .podium {
     display: flex;
-    justify-content: center;
+    justify-content: center; /*centreret*/
     align-items: flex-end;
     height: 300px;
     margin-top: 50px;
@@ -76,10 +79,11 @@ body {
     width: 175px;
     font-size: large;
   }
+
   .Tilbage:hover {
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease; /*hvor længe transition tager*/
     transform-origin: center;
-    transform: scale(1.1);
+    transform: scale(1.1); /*størrelse*/
     background-color: #3b5759;
     }
 
@@ -94,8 +98,8 @@ body {
     top: 50px;                    /* Justér hvor langt nede den skal starte */
     left: 50%;
     transform: translateX(-50%);  /* Centrer den horisontalt */
-    background-color: rgba(199, 218, 212, 0.6);
-    border-radius: 5%;
+    background-color: rgba(199, 218, 212, 0.6); /*skruer ned for opasitet*/
+    border-radius: 5%; /*bøjer kanterne*/
     width: 480px;
     height: 650px;
     padding: 4%;

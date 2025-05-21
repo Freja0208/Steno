@@ -19,29 +19,30 @@
 /*Styling af det generale, som baggrundsfarve, størrelse og fonte på overskrifter og tekst*/
 body {
   background-color: var(--Beige);
-  background-image: url("/Images/Bgpattern.png");
+  background-image: url("/Images/Bgpattern.png"); /* Mønstret baggrund */
 
   /* Ændret: fjerner margin-left og bruger flex i stedet */
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Centrerer indhold horisontalt */
+  justify-content: center; /* Centrerer indhold vertikalt */
   font-family: 'Creato Display', sans-serif;
 }
 
+/* Den store blå cirkel i midten */
 .cirkel {
   width: 630px;
   height: 530px;
-  border-radius: 50%;
+  border-radius: 50%; /* Gør boksen rund */
   background-color: var(--blaa);
   display: flex;
   align-items: center;
   justify-content: center; /* Tilføjet for at centrere tekst/indhold */
   color: var(--gron);
   font-size: 20px;
-  text-align: center; 
+  text-align: center; /*centrere tekst*/
   margin-top: 50px;
 }
 
@@ -51,6 +52,7 @@ body {
   align-items: center;
 }
 
+/* Container til ikon og tekst */
 .cirkel-container {
   position: relative;
   width: 300px;
@@ -58,6 +60,7 @@ body {
   display: flex;
 }
 
+/* Styling af ikoner */
 .cirkel-container img {
   position: absolute;
   width: 100px;
@@ -67,6 +70,7 @@ body {
   margin-top: -100%;
 }
 
+/* Navn under ikon */
 .cirkel-container h2 {
   color: #4A6C6F;
   font-size: 15px;
@@ -81,8 +85,8 @@ body {
 /* MODAL popup baggrund */
 .modal {
   display: none; /* skjult som standard */
-  position: fixed;
-  z-index: 1000;
+  position: fixed; /* vises ovenpå alt */
+  z-index: 1000; /* Gør at videoen vises ovenpå alt andet */
   left: 0;
   top: 0;
   width: 100%;
@@ -92,9 +96,9 @@ body {
   justify-content: center;
 }
 
-/* Indhold i midten */
+/* Modal-indhold (video-boks) */
 .modal-content {
-  position: relative;
+  position: relative; /* ligger normalt i flowet men kan rykkes */
   width: 80%;
   max-width: 800px;
   background-color: black;
@@ -102,6 +106,7 @@ body {
   overflow: hidden;
 }
 
+/* Video i modal */
 .modal-content video {
   width: 100%;
   height: auto;
@@ -110,7 +115,7 @@ body {
 
 /* Luk-knap */
 .close {
-  position: absolute;
+  position: absolute; /* positioneres ift. relative */
   font-family: Arial, Helvetica, sans-serif;
   top: 10px;
   right: 15px;
@@ -122,10 +127,11 @@ body {
   border-radius: 7px;
   height: 8%;
   width: 10%;
-  cursor: pointer;
-  z-index: 10;
-}
+  cursor: pointer; /* klikbart */
+  z-index: 10; /* knappen vises ovenpå videoen */
+} 
 
+/* Ikonpositioner rundt i cirkel + hover-effekt */
 .pring {
   transform: rotate(35deg) translate(200px) rotate(-35deg); scale: 1.05;
   transition: transform 0.2s ease;
@@ -134,6 +140,8 @@ body {
 .pring:hover {
   transform: rotate(35deg) translate(200px) rotate(-35deg) scale(1.1);
 }
+
+/* Gentagelse for hver præventionsform med tilpassede rotationer */
 .hormonspiral {
   transform: rotate(350deg) translate(250px) rotate(-350deg);
   transition: transform 0.2s ease;
@@ -188,6 +196,7 @@ body {
   transform: rotate(306deg) translate(230px) rotate(-306deg) scale(1.1);
 }
 
+/* Tekstplacering omkring cirklen */
 .tekst1 {transform: rotate(0deg) translate(240px) rotate(-0deg);}
 .tekst2 { transform: rotate(40deg)  translate(250px) rotate(-40deg); }
 .tekst3 { transform: rotate(87deg)  translate(210px) rotate(-87deg); }
@@ -197,7 +206,7 @@ body {
 .tekst7   { transform: rotate(315deg) translate(205px) rotate(-315deg); }
 
 
-
+/* Knap til quiz */
 .knap-container {
   display: flex;
   justify-content: center;
@@ -215,9 +224,10 @@ body {
   font-size: 16px;
 }
 
+/* Hover-effekt på quiz-knap */
 .quizknap:hover {
-transition: transform 0.2s ease;
+transition: transform 0.2s ease; /* hvor længe den tager for hover */
 transform-origin: center;
-transform: scale(1.1);
+transform: scale(1.1); /* Størrelse ved hover */
 background-color: #3b5759;
 }
